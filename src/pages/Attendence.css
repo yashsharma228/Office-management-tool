@@ -1,0 +1,135 @@
+/* ===== General Container ===== */
+.attendance-container {
+   padding: 20px;
+  margin-left: 250px;
+  background-color: #f8fafc;
+  margin-top: 66px;
+  height: calc(100vh - 66px); /* Fixed height based on viewport */
+  overflow-y: auto;   /* enable vertical scrolling */
+  overflow-x: hidden; /* prevent horizontal scroll */
+  box-sizing: border-box;
+}
+
+.attendance-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.office-time,
+.live-time {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #555;
+}
+
+/* ===== Attendance Table ===== */
+.attendance-table-container {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+}
+
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.attendance-table th,
+.attendance-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.attendance-table th {
+  background: #1976d2;
+  color: #fff;
+  font-weight: 600;
+}
+
+.attendance-table tr:hover {
+  background: #f9f9f9;
+  transition: 0.2s;
+}
+
+/* ===== Role Badges ===== */
+.role-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.role-boss {
+  background: #e91e63;
+}
+.role-manager {
+  background: #9c27b0;
+}
+.role-employee {
+  background: #4caf50;
+}
+
+/* ===== Status Badges ===== */
+.status-badge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.status-badge.present {
+  background: #4caf50;
+}
+
+.status-badge.absent {
+  background: #f44336;
+}
+
+.status-badge.late {
+  background: #ff9800;
+}
+
+/* ===== Buttons ===== */
+.checkin-btn {
+  background: #1976d2;
+  border: none;
+  padding: 6px 14px;
+  color: #fff;
+  font-size: 13px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.checkin-btn:hover {
+  background: #1565c0;
+}
+
+.checkin-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Animation for new row updates */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

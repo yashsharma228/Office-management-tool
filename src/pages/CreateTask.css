@@ -1,0 +1,419 @@
+/* .task-form-container {
+  max-width: 650px;
+  margin: 4rem auto;
+  margin-top: 100px;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.task-form-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+}
+
+.form-title {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.6rem;
+  outline: none;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.2);
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+textarea {
+  resize: none;
+  min-height: 80px;
+  max-width: 100%;
+}
+
+/* Custom Dropdown
+.dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropbtn {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.6rem;
+  background: #f9fafb;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.dropbtn:hover {
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.6rem;
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 20;
+  margin-top: 5px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+}
+
+.dropdown.show .dropdown-content {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  font-size: 0.95rem;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+  background: #f3f4f6;
+}
+
+/* File Upload Modern Style
+.file-upload {
+  border: 2px dashed #2563eb;
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: #f9fafb;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.file-upload:hover {
+  background: #eef2ff;
+  border-color: #1e40af;
+}
+
+.file-upload input {
+  display: none;
+}
+
+.file-upload label {
+  display: block;
+  font-size: 1rem;
+  color: #2563eb;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.file-upload small {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #1e40af;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+} */
+
+/* Remove page scroll */
+body {
+  overflow: hidden; /* Prevent page scroll */
+}
+
+/* Task Form Container */
+.task-form-container {
+  padding: 20px;
+  margin-left: 250px;
+  background-color: #f8fafc;
+  margin-top: 66px;
+  height: calc(100vh - 66px); /* Fixed height based on viewport */
+  overflow-y: auto;   /* enable vertical scrolling */
+  overflow-x: hidden; /* prevent horizontal scroll */
+  box-sizing: border-box;
+}
+
+.task-form-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+}
+
+/* Form Titles */
+.form-title {
+  text-align: center;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-bottom: 0.3rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* Form Layout */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-group {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.6rem;
+  outline: none;
+  font-size: 1rem;
+  background: #f9fafb;
+  transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.2);
+}
+
+.form-group label {
+  margin-bottom: 0.4rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+textarea {
+  resize: none;
+  min-height: 80px;
+  max-width: 98%;
+}
+
+/* Dropdown (Team Members) Updated */
+.dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.dropbtn {
+  width: 100%;
+  padding: 0.9rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 0.6rem;
+  background: #f9fafb;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.dropbtn:hover {
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+/* Updated dropdown content styling for checkboxes */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.6rem;
+  width: 100%;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 20;
+  margin-top: 5px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08);
+  padding: 0.5rem 0;
+}
+
+.dropdown.show .dropdown-content {
+  display: block;
+}
+
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  font-size: 0.95rem;
+  color: #374151;
+  cursor: pointer;
+  transition: background 0.2s;
+  border-radius: 0.5rem;
+}
+
+.dropdown-item:hover {
+  background: #f3f4f6;
+}
+
+/* Style checkboxes inside dropdown to match modern inputs */
+.dropdown-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+  cursor: pointer;
+  margin: 0;
+}
+
+/* Polished File Upload */
+.file-upload {
+  border: 2px dashed #2563eb;
+  border-radius: 0.8rem;
+  padding: 1.8rem;
+  text-align: center;
+  background: #f9fafb;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+
+.file-upload:hover {
+  background: #eef2ff;
+  border-color: #1e40af;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.15);
+}
+
+.file-upload input {
+  display: none;
+}
+
+.file-upload label {
+  display: inline-block;
+  font-size: 1rem;
+  color: #2563eb;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.file-upload label:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+.file-upload .browse-link {
+  font-weight: 600;
+}
+
+.file-upload .file-name {
+  display: block;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #111827;
+  font-weight: 500;
+  word-break: break-all;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #1e40af;
+  box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}

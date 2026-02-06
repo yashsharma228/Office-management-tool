@@ -1,0 +1,402 @@
+/* ====== Container & Layout ====== */
+.mytask-container {
+  padding: 20px;
+  margin-left: 250px;
+  background-color: #f8fafc;
+  margin-top: 66px;
+  height: calc(100vh - 66px); /* Fixed height based on viewport */
+  overflow-y: auto;   /* enable vertical scrolling */
+  overflow-x: hidden; /* prevent horizontal scroll */
+  box-sizing: border-box;
+}
+
+.mytask-heading {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* ====== Filters ====== */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.search-input,
+.priority-dropdown,
+.status-dropdown {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-input:focus,
+.priority-dropdown:focus,
+.status-dropdown:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.3);
+}
+
+/* ====== Loading / Empty Text ====== */
+.loading-text,
+.empty-text {
+  font-size: 18px;
+  color: #555;
+  margin-top: 20px;
+}
+
+/* ====== Task Grid ====== */
+.task-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ====== Task Card ====== */
+.task-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 15px 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ====== Card Actions ====== */
+.task-card-actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  gap: 6px;
+}
+
+.task-card-actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.task-card-actions button:hover {
+  color: #007bff;
+}
+
+/* ====== Status Badge ====== */
+.task-status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.status-not-started { background-color: #6c757d; }
+.status-in-progress { background-color: #17a2b8; }
+.status-completed { background-color: #28a745; }
+
+/* ====== Task Title & Description ====== */
+.task-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.task-desc {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* ====== Tags ====== */
+.task-tags {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  background-color: #eee;
+}
+
+.priority-high { background-color: #dc3545; color: #fff; }
+.priority-medium { background-color: #ffc107; color: #212529; }
+.priority-low { background-color: #28a745; color: #fff; }
+
+/* ====== Attachments ====== */
+.attachments {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.attachment-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.attachment-actions button {
+  background: #f1f1f1;
+  border: none;
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  transition: all 0.2s ease;
+}
+
+.attachment-actions button:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.file-icon {
+  font-size: 18px;
+}
+
+/* ====== Footer ====== */
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+  margin-top: 12px;
+}
+
+/* ====== Status Buttons ====== */
+.status-buttons {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.status-btn {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  transition: all 0.2s ease;
+}
+
+.status-btn.active,
+.status-btn:hover {
+  border-color: #007bff;
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* ====== Modals ====== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 20px 30px;
+  position: relative;
+  animation: slideIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.close-btn:hover {
+  color: #dc3545;
+}
+
+/* ====== Detail View ====== */
+.task-detail-container {
+  font-size: 14px;
+  color: #333;
+}
+
+.detail-section {
+  margin-bottom: 16px;
+}
+
+.detail-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.detail-status {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.status-badge,
+.priority-badge {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #fff;
+}
+
+.priority-badge.priority-high { background-color: #dc3545; }
+.priority-badge.priority-medium { background-color: #ffc107; color: #212529; }
+.priority-badge.priority-low { background-color: #28a745; }
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.detail-item label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.detail-attachment {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.detail-attachment .attachment-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ====== Chat Modal ====== */
+.chat-modal {
+  max-width: 700px;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-messages {
+  max-height: 350px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.message {
+  margin-bottom: 8px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background-color: #e1e1e1;
+  animation: fadeIn 0.3s ease;
+}
+
+.own-message {
+  background-color: #007bff;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.message-sender {
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.message-time {
+  font-size: 10px;
+  color: #444;
+  text-align: right;
+}
+
+/* Chat input */
+.chat-input-container {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.chat-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.3);
+}
+
+.send-btn {
+  padding: 8px 12px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease;
+}
+
+.send-btn:hover {
+  background-color: #0056b3;
+}
+
+/* ====== Animations ====== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

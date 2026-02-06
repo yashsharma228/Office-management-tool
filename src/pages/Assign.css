@@ -1,0 +1,120 @@
+.assignment-letter-container {
+  padding: 20px;
+  margin-left: 250px;
+  background-color: #f8fafc;
+  margin-top: 66px;
+  height: calc(100vh - 66px); /* Fixed height based on viewport */
+  overflow-y: auto;   /* enable vertical scrolling */
+  overflow-x: hidden; /* prevent horizontal scroll */
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.letter-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 15px;
+}
+
+.company-logo {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.company-info h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.company-info p {
+  margin: 3px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+/* Date & Reference */
+.letter-meta {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Recipient Details */
+.recipient-details {
+  margin-top: 25px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Subject Line */
+.subject {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #f8f9fa;
+  padding: 10px 12px;
+  border-left: 4px solid #007bff;
+  color: #333;
+}
+
+/* Letter Body */
+.letter-body {
+  margin-top: 25px;
+  font-size: 15px;
+  text-align: justify;
+}
+
+.letter-body h4 {
+  margin-top: 18px;
+  font-size: 16px;
+  color: #007bff;
+}
+
+.letter-body ul {
+  margin: 12px 0 0 20px;
+  list-style: disc;
+}
+
+/* Signature Section */
+.signature-section {
+  margin-top: 50px;
+  font-size: 15px;
+}
+
+.signature-section p {
+  margin: 5px 0;
+}
+
+/* Acknowledgement Box */
+.acknowledgement {
+  margin-top: 50px;
+  padding: 18px;
+  border: 1px dashed #aaa;
+  background: #fdfdfd;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Print Styling */
+@media print {
+  .assignment-letter-container {
+    width: 100%;
+    margin: 0;
+    border: none;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .subject {
+    background: none;
+    border-left: none;
+    font-weight: bold;
+  }
+}

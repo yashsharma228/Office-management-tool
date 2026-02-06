@@ -1,0 +1,100 @@
+/* Navbar container */
+.navbar {
+  margin: 0;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1b5e20;
+  color: white;
+  height: 75px;
+  min-width: 200px;
+  position: fixed; /* fixed on top */
+  top: 0;
+  left: 222px; /* width of sidebar */
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between title and greeting */
+}
+
+.brand-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #efe9e9;
+}
+
+.user-greeting {
+  font-size: 1rem;
+  color: #faf7f7;
+  font-weight: 500;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Left side */
+.navbar-left .brand-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Right side */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Search bar */
+.navbar-search input {
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 1px solid #388e3c;
+  outline: none;
+  font-size: 0.95rem;
+  background-color: #2e7d32;
+  color: white;
+  width: 200px;
+  transition: all 0.3s ease;
+}
+
+.navbar-search input::placeholder {
+  color: #061e07;
+  font-size: 0.9rem;
+}
+
+.navbar-search input:focus {
+  border-color: #66bb6a;
+  background-color: #aebaaa;
+  width: 240px;
+  box-shadow: 0 0 6px rgba(102, 187, 106, 0.6);
+}
+
+/* Notification icon */
+.navbar-icon {
+  margin-left: 15px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #c8e6c9;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .navbar-left {
+    flex-direction: column;
+    gap: 5px;
+    align-items: flex-start;
+  }
+  
+  .user-greeting {
+    font-size: 0.9rem;
+    padding: 4px 8px;
+  }
+}
